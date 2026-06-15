@@ -48,6 +48,13 @@ const routes = [
       'Lead-generation page offering a free website audit across performance, SEO, accessibility, security, and conversion readiness.',
   },
   {
+    path: canonicalPath('/custom-ai'),
+    changefreq: 'monthly',
+    priority: '0.9',
+    summary:
+      'Custom AI development services: AI assistants and agents, workflow automation, document and data intelligence, AI-powered web apps, and AI strategy. Zach embeds with clients to find high-ROI use cases and ship working AI solutions fast.',
+  },
+  {
     path: canonicalPath('/about'),
     changefreq: 'monthly',
     priority: '0.8',
@@ -89,7 +96,7 @@ const llms = `# ZH Web Solutions
 
 Canonical site: ${SITE_URL}
 
-This website belongs to Zach Howell, a Wisconsin-based senior full-stack engineer and freelance web developer in West Bend, WI. The public site currently emphasizes custom React/Vite builds, GSAP-powered front-end execution, technical SEO, analytics, hosting guidance, and ongoing partnership support for businesses in Southeastern Wisconsin.
+This website belongs to Zach Howell, a Wisconsin-based senior full-stack engineer and freelance web developer in West Bend, WI. The public site emphasizes custom React/Vite builds, GSAP-powered front-end execution, technical SEO, analytics, hosting guidance, and ongoing partnership support for businesses in Southeastern Wisconsin. Zach also builds custom AI products for clients nationwide — AI assistants and agents, workflow automation, document and data intelligence, and AI-powered web apps — working in a forward-deployed style: embedding with a client's team, finding the highest-ROI use cases, and shipping working software fast.
 
 ## Primary Pages
 
@@ -102,6 +109,8 @@ ${routes
 
 ## Focus Areas
 
+- Custom AI development: assistants, agents, automation, document/data intelligence, and AI-powered web apps
+- Forward-deployed AI engineering: embedding with clients to find high-ROI use cases and ship fast
 - Custom React and Vite web development
 - GSAP-powered motion systems
 - Technical SEO and structured data

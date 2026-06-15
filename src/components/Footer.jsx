@@ -65,6 +65,13 @@ const Footer = ({ handleMouseEnter, handleMouseLeave }) => {
                 </a>
               </div>
             </div>
+            <Link
+              to="/custom-ai/"
+              className="mt-5 inline-flex items-center gap-2 rounded-full border border-accent-orange/40 bg-accent-orange/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-accent-orange transition-colors hover:bg-accent-orange hover:text-white"
+            >
+              ✨ Custom AI Solutions
+              <span className="text-[9px] font-black uppercase tracking-widest border border-current/40 px-1.5 py-0.5 rounded-full leading-none">New</span>
+            </Link>
           </div>
         </div>
 

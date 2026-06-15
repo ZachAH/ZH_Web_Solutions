@@ -155,6 +155,75 @@ export const servicesSchema = {
   },
 };
 
+export const customAiSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Custom AI Development & Automation',
+  name: 'Custom AI Development',
+  url: absoluteUrl('/custom-ai'),
+  description:
+    'Custom AI products for businesses: AI assistants and agents, workflow automation, document and data intelligence, AI-powered web apps, and AI strategy. Built around your workflow to cut busywork, capture leads, and drive revenue.',
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'Zach Howell — Custom AI Development',
+    url: SITE_URL,
+    address: ADDRESS,
+    geo: GEO,
+  },
+  areaServed: { '@type': 'Country', name: 'United States' },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Custom AI Solutions',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Custom AI Assistants & Agents',
+          description:
+            'Purpose-built chat and voice AI agents trained on your business to book appointments, qualify leads, answer customers, and take real actions in your tools.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'AI Workflow Automation',
+          description:
+            'End-to-end automations that connect your apps and let AI handle intake, routing, data entry, and follow-up hands-free.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Document & Data Intelligence',
+          description:
+            'AI that reads contracts, invoices, forms, and reports — extracting, classifying, and structuring data and making it searchable in plain English.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'AI-Powered Web Apps',
+          description:
+            'Full custom products with AI at the core — dashboards, internal tools, and customer-facing apps on React with secure, scalable backends.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'AI Strategy & Prototyping',
+          description:
+            'Audit of your operation to find the highest-ROI AI use cases, followed by a fast working prototype before committing to a full build.',
+        },
+      },
+    ],
+  },
+};
+
 export const breadcrumb = (items) => ({
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',

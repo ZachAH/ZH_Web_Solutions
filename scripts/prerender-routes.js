@@ -40,6 +40,12 @@ const ROUTES = [
       'Custom React websites, e-commerce builds, SEO optimization, and ongoing support for Wisconsin small businesses. See every service I offer and how I work.',
   },
   {
+    path: canonicalPath('/custom-ai'),
+    title: 'Custom AI Development for Business | AI Automation, Agents & Apps — Zach Howell',
+    description:
+      'Custom AI products built for your business: AI assistants, workflow automation, document intelligence, and AI-powered web apps. I find the highest-ROI use cases and ship working solutions fast. Book a free AI strategy call.',
+  },
+  {
     path: canonicalPath('/about'),
     title: 'Why ZH Web Solutions? | Senior Engineer, Fast React Builds, Zero Lock-In',
     description:

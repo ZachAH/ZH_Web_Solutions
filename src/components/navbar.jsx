@@ -40,6 +40,7 @@ const Navbar = ({ handleMouseEnter, handleMouseLeave }) => {
     { name: 'Home', path: '/' },
     { name: 'Why Me?', path: '/about/' },
     { name: 'Services', path: '/services/' },
+    { name: 'Custom AI', path: '/custom-ai/', badge: 'New' },
     { name: 'Areas Served', path: '/locations/' },
     { name: 'Packages', path: '/pricing/' },
     { name: 'Free Audit', path: '/audit/' },
@@ -88,11 +89,14 @@ const Navbar = ({ handleMouseEnter, handleMouseLeave }) => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative px-3 py-1 text-sm font-medium transition-colors hover:text-accent-orange ${
+                className={`relative inline-flex items-center gap-1 px-3 py-1 text-sm font-medium transition-colors hover:text-accent-orange ${
                   isActive(link.path) ? 'text-accent-orange' : 'text-text-primary'
                 }`}
               >
                 {link.name}
+                {link.badge && (
+                  <span className="text-[9px] font-black uppercase tracking-widest text-accent-orange border border-accent-orange/40 bg-accent-orange/10 px-1.5 py-0.5 rounded-full leading-none">{link.badge}</span>
+                )}
                 {isActive(link.path) && (
                   <motion.div
                     layoutId="navUnderline"
@@ -186,11 +190,14 @@ const Navbar = ({ handleMouseEnter, handleMouseLeave }) => {
                     ) : (
                       <Link
                         to={link.path}
-                        className={`text-3xl font-bold tracking-tight py-2 block transition-colors ${
+                        className={`text-3xl font-bold tracking-tight py-2 flex items-center gap-3 transition-colors ${
                           isActive(link.path) ? 'text-accent-orange' : 'text-text-primary hover:text-accent-orange'
                         }`}
                       >
                         {link.name}
+                        {link.badge && (
+                          <span className="text-[9px] font-black uppercase tracking-widest text-accent-orange border border-accent-orange/40 bg-accent-orange/10 px-1.5 py-0.5 rounded-full leading-none">{link.badge}</span>
+                        )}
                       </Link>
                     )}
                   </motion.div>

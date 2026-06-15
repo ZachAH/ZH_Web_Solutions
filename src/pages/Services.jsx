@@ -187,6 +187,38 @@ const Services = ({ handleMouseEnter, handleMouseLeave }) => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          className="relative mb-20 p-10 md:p-14 rounded-[3rem] border border-accent-orange/30 bg-gradient-to-br from-accent-orange/10 via-transparent to-accent-orange/10 dark:from-accent-orange/10 dark:to-accent-orange/5 overflow-hidden"
+        >
+          <div className="absolute -top-1/2 -left-1/4 w-1/2 h-full bg-accent-orange/10 blur-[120px] pointer-events-none" />
+          <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-accent-orange">New Service</span>
+                <span className="text-[9px] font-black uppercase tracking-widest text-accent-orange border border-accent-orange/40 bg-accent-orange/10 px-1.5 py-0.5 rounded-full leading-none">AI</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase leading-[0.95] mb-4">
+                Now building <span className="text-gradient">custom AI</span> products.
+              </h2>
+              <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-300 font-medium leading-relaxed">
+                Beyond websites, I build AI assistants, workflow automation, document intelligence, and AI-powered apps — software that eliminates busywork, captures more leads, and drives revenue for your business.
+              </p>
+            </div>
+            <Link
+              to="/custom-ai"
+              className="shrink-0 inline-flex items-center justify-center gap-2 rounded-full bg-sunset-gradient px-8 py-4 text-sm font-black uppercase tracking-[0.18em] text-white shadow-lg shadow-accent-red/20 transition-transform hover:scale-105 active:scale-95"
+            >
+              Explore Custom AI
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           className="relative mb-20 p-10 md:p-14 rounded-[3rem] border border-accent-orange/30 bg-gradient-to-br from-accent-orange/5 via-transparent to-accent-orange/5 dark:from-accent-orange/10 dark:to-accent-orange/5 overflow-hidden"
         >
           <div className="absolute -top-1/2 -right-1/4 w-1/2 h-full bg-accent-orange/10 blur-[120px] pointer-events-none" />

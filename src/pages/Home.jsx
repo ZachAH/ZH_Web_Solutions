@@ -110,6 +110,50 @@ const SummerPromoModal = ({ isOpen, onClose }) => (
   </AnimatePresence>
 );
 
+function AiBlurb() {
+  return (
+    <section className="py-20 px-6 md:px-12 lg:px-24">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="relative overflow-hidden rounded-[2rem] border border-accent-orange/20 dark:border-accent-orange/15 bg-gradient-to-br from-amber-50 via-white to-orange-50 dark:from-obsidian-900 dark:via-obsidian-950 dark:to-orange-950/20 p-10 md:p-14 shadow-premium"
+        >
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(249,115,22,0.18),transparent_60%)]" />
+          <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <div className="max-w-xl">
+              <span className="inline-flex items-center gap-2 mb-4 rounded-full border border-accent-orange/40 bg-accent-orange/10 px-4 py-1 text-[10px] font-black uppercase tracking-[0.24em] text-accent-orange">
+                Custom AI Solutions
+                <span className="text-[8px] border border-current/40 px-1.5 py-0.5 rounded-full leading-none">New</span>
+              </span>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-obsidian-950 dark:text-white leading-tight mb-4">
+                Need to automate, build, or fix something with{' '}
+                <span className="text-gradient">AI?</span>
+              </h2>
+              <p className="text-text-secondary dark:text-zinc-300 text-base leading-relaxed">
+                I build custom AI products that solve real business problems — assistants, workflow automation, document intelligence, and AI-powered apps. I find your biggest time-sinks and turn them into software that saves money and drives revenue.
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <Link
+                to="/custom-ai/"
+                className="inline-flex items-center gap-2 rounded-full bg-sunset-gradient px-8 py-4 text-sm font-black uppercase tracking-[0.18em] text-white shadow-lg transition-all hover:shadow-accent-red/30 hover:scale-105 active:scale-95"
+              >
+                Explore Custom AI
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 function WeddingBlurb() {
   return (
     <section className="py-20 px-6 md:px-12 lg:px-24">
@@ -191,6 +235,7 @@ function Home({ handleMouseEnter, handleMouseLeave }) {
         handleMouseEnter={handleMouseEnter}
         handleMouseLeave={handleMouseLeave}
       />
+      <AiBlurb />
       <WeddingBlurb />
       <Contact />
     </>
