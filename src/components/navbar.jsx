@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiPhone, FiX } from 'react-icons/fi';
 import ThemeToggle from './ThemeToggle';
 import { canonicalPath } from '../utils/seoUrls';
+import { ensureCalendly, openCalendly } from '../utils/calendly';
 
 const PHONE_NUMBER = '262-341-7181';
 const PHONE_HREF = 'tel:2623417181';
@@ -25,6 +26,16 @@ const Navbar = ({ handleMouseEnter, handleMouseLeave }) => {
     setIsOpen(false);
   }, [location]);
 
+  // Preload Calendly when the browser is idle so the "Contact" booking
+  // popup (and every other booking CTA site-wide) opens instantly.
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+      window.requestIdleCallback(() => ensureCalendly());
+    } else {
+      setTimeout(() => ensureCalendly(), 1500);
+    }
+  }, []);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -40,12 +51,13 @@ const Navbar = ({ handleMouseEnter, handleMouseLeave }) => {
     { name: 'Home', path: '/' },
     { name: 'Why Me?', path: '/about/' },
     { name: 'Services', path: '/services/' },
-    { name: 'Custom AI', path: '/custom-ai/', badge: 'New' },
+    { name: 'Custom AI', path: '/custom-ai/' },
+    { name: 'PostPilot', path: '/postpilot/', badge: 'New' },
     { name: 'Areas Served', path: '/locations/' },
     { name: 'Packages', path: '/pricing/' },
     { name: 'Free Audit', path: '/audit/' },
     { name: 'Weddings', path: null, href: 'https://weddings.zachhowell.dev', external: true },
-    { name: 'Contact', path: '/#contact' },
+    { name: 'Contact', action: 'calendly' },
   ];
 
   const isActive = (path) => {
@@ -74,7 +86,16 @@ const Navbar = ({ handleMouseEnter, handleMouseLeave }) => {
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) =>
-            link.external ? (
+            link.action === 'calendly' ? (
+              <button
+                key={link.name}
+                type="button"
+                onClick={openCalendly}
+                className="relative inline-flex items-center gap-1 px-3 py-1 text-sm font-medium transition-colors hover:text-accent-orange text-text-primary"
+              >
+                {link.name}
+              </button>
+            ) : link.external ? (
               <a
                 key={link.href}
                 href={link.href}
@@ -172,12 +193,20 @@ const Navbar = ({ handleMouseEnter, handleMouseLeave }) => {
               <div className="flex flex-col gap-6">
                 {navLinks.map((link, i) => (
                   <motion.div
-                    key={link.href || link.path}
+                    key={link.href || link.path || link.name}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
                   >
-                    {link.external ? (
+                    {link.action === 'calendly' ? (
+                      <button
+                        type="button"
+                        onClick={() => { setIsOpen(false); openCalendly(); }}
+                        className="text-3xl font-bold tracking-tight py-2 flex items-center gap-3 transition-colors text-text-primary hover:text-accent-orange"
+                      >
+                        {link.name}
+                      </button>
+                    ) : link.external ? (
                       <a
                         href={link.href}
                         target="_blank"

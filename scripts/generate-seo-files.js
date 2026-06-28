@@ -55,6 +55,13 @@ const routes = [
       'Custom AI development services: AI assistants and agents, workflow automation, document and data intelligence, AI-powered web apps, and AI strategy. Zach embeds with clients to find high-ROI use cases and ship working AI solutions fast.',
   },
   {
+    path: canonicalPath('/postpilot'),
+    changefreq: 'monthly',
+    priority: '0.9',
+    summary:
+      'PostPilot is an AI Facebook posting agent for small businesses: it drafts posts in the owner\'s voice, sends each to their phone for one-tap approval, and publishes only approved posts with branded graphics. Owner approves everything; nothing posts without them. A live AI product built and managed by Zach Howell.',
+  },
+  {
     path: canonicalPath('/about'),
     changefreq: 'monthly',
     priority: '0.8',

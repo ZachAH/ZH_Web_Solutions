@@ -22,6 +22,7 @@ const OnboardingForm = lazy(() => import('./components/OnboardingForm'));
 const DiscoveryForm = lazy(() => import('./components/DiscoveryForm'));
 const Audit = lazy(() => import('./pages/Audit'));
 const CustomAi = lazy(() => import('./pages/CustomAi'));
+const PostPilot = lazy(() => import('./pages/PostPilot'));
 
 // Initialize GA4 with your Measurement ID — defer slightly so it doesn't
 // compete with first paint / hydration.
@@ -250,6 +251,15 @@ function AppContent() {
                 element={
                   <PageWrapper>
                     <CustomAi />
+                  </PageWrapper>
+                }
+              />
+
+              <Route
+                path="/postpilot"
+                element={
+                  <PageWrapper>
+                    <PostPilot />
                   </PageWrapper>
                 }
               />

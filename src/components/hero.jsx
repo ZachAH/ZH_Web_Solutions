@@ -116,8 +116,25 @@ const Hero = ({ handleMouseEnter, handleMouseLeave }) => {
   };
 
   return (
-    <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-6 md:px-12 overflow-hidden pt-20 md:pt-0">
+    <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-6 md:px-12 overflow-hidden pt-24 md:pt-28">
       <div className="max-w-6xl w-full relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+          className="mb-6 flex justify-center"
+        >
+          <span className="inline-flex items-center gap-2 rounded-full border border-obsidian-700/10 dark:border-white/10 bg-white/70 dark:bg-obsidian-950/50 backdrop-blur-md px-4 py-1.5 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent-orange shrink-0" />
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-text-primary">
+              Senior Software Engineer
+            </span>
+            <span className="hidden sm:inline text-xs font-bold text-text-secondary">
+              · Websites, Web Apps &amp; AI
+            </span>
+          </span>
+        </motion.div>
+
         <h1
           className=" test-gradient text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-10 leading-[0.92] text-text-primary select-none max-w-6xl mx-auto"
           onMouseEnter={handleMouseEnter}
@@ -132,7 +149,7 @@ const Hero = ({ handleMouseEnter, handleMouseLeave }) => {
           animate="visible"
           className="text-lg md:text-xl lg:text-2xl text-text-secondary dark:text-zinc-300 max-w-5xl mx-auto mb-14 font-medium leading-relaxed"
         >
-          I design and build blazing-fast websites for Wisconsin businesses — using modern code that ranks with both Google and AI search engines, loads in under 2 seconds, and converts browsers into customers.
+          I'm a senior software engineer building blazing-fast websites, custom web apps, and AI tools for Wisconsin businesses — modern software that ranks with Google and AI search, loads in under 2 seconds, and turns visitors into customers.
         </motion.p>
 
         {/* Primary CTA */}

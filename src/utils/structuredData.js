@@ -28,9 +28,9 @@ export const personSchema = {
   name: 'Zach Howell',
   url: SITE_URL,
   image: `${SITE_URL}/og-preview.png`,
-  jobTitle: 'Full-Stack Software Engineer & Freelance Web Developer',
+  jobTitle: 'Senior Full-Stack Software Engineer & AI Engineer',
   description:
-    'Wisconsin-based full-stack software engineer with 6+ years of experience building React, Node.js, and Firebase web applications for small businesses and brands.',
+    'Wisconsin-based senior full-stack software engineer with 6+ years of experience building React, Node.js, and Firebase web applications, custom software, and AI products for small businesses and brands. Also paid by leading AI labs and platforms to train and evaluate frontier AI models.',
   address: ADDRESS,
   knowsAbout: [
     'React',
@@ -44,6 +44,11 @@ export const personSchema = {
     'Accessibility',
     'E-commerce Development',
     'Custom Web Applications',
+    'Custom AI Development',
+    'AI Model Training & Evaluation',
+    'Large Language Models (LLMs)',
+    'Retrieval-Augmented Generation (RAG)',
+    'AI Agents',
   ],
   sameAs: [
     'https://github.com/zachhowell',
@@ -222,6 +227,25 @@ export const customAiSchema = {
       },
     ],
   },
+};
+
+export const postPilotSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'AI Social Media Automation',
+  name: 'PostPilot — AI Facebook Posting on Autopilot',
+  url: absoluteUrl('/postpilot'),
+  description:
+    'PostPilot is an AI agent that keeps a small business active on Facebook without the time sink. It drafts posts in the owner\'s voice, sends each one to their phone for one-tap approval, and publishes only the posts they okay — branded graphics included. Nothing is posted without owner approval. Setup and management handled by Zach Howell.',
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'Zach Howell — Custom AI Development',
+    url: SITE_URL,
+    address: ADDRESS,
+    geo: GEO,
+  },
+  areaServed: { '@type': 'Country', name: 'United States' },
+  isRelatedTo: { '@type': 'Service', name: 'Custom AI Development', url: absoluteUrl('/custom-ai') },
 };
 
 export const breadcrumb = (items) => ({

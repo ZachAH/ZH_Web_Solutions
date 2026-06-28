@@ -56,7 +56,35 @@ const Contact = ({ handleMouseEnter, handleMouseLeave }) => {
             Let's Start <span className="text-gradient">Something</span>.
           </h2>
           <p className="text-xl md:text-2xl text-text-secondary max-w-2xl mx-auto font-medium">
-            Have a project in mind or just want to say hi? I'm always ready for a new challenge.
+            Have a project in mind? The fastest way to start is a quick call — grab a time below and we'll talk it through.
+          </p>
+        </motion.div>
+
+        {/* Primary contact path — booking a call is the lowest-friction
+            way to start, so it leads. The message form further down is
+            the fallback for visitors who'd rather write. */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-xl mx-auto mb-24 text-center"
+        >
+          <button
+            type="button"
+            onClick={openCalendly}
+            className="group inline-flex items-center justify-center gap-3 rounded-full bg-sunset-gradient px-10 py-5 text-base font-black uppercase tracking-[0.18em] text-white shadow-2xl shadow-accent-red/20 transition-transform hover:scale-105 active:scale-95"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            aria-label="Book a free 15-minute call with Zach Howell"
+          >
+            <svg className="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span>Book a Free 15-Min Call</span>
+          </button>
+          <p className="mt-4 text-sm text-text-secondary font-medium">
+            Pick a time that works for you — no commitment, no pressure. Usually the fastest way to get answers.
           </p>
         </motion.div>
 
@@ -122,27 +150,6 @@ const Contact = ({ handleMouseEnter, handleMouseLeave }) => {
                 </div>
               </div>
 
-              {/* Book-a-call path — captures visitors who'd rather talk
-                  than fill out the form. Opens Calendly as an on-page
-                  popup overlay. */}
-              <div className="pt-4 w-full max-w-sm">
-                <button
-                  type="button"
-                  onClick={openCalendly}
-                  className="group flex w-full items-center justify-center gap-3 rounded-2xl border border-accent-orange/30 bg-accent-orange/10 px-6 py-4 text-sm font-black uppercase tracking-[0.18em] text-accent-orange transition-all hover:bg-accent-orange hover:text-white hover:scale-[1.02] active:scale-95"
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                  aria-label="Book a free 15-minute call with Zach Howell"
-                >
-                  <svg className="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <span>Book a Free 15-Min Call</span>
-                </button>
-                <p className="mt-3 text-center text-xs text-text-secondary font-medium">
-                  Prefer to talk? Grab a time — no commitment, no pressure.
-                </p>
-              </div>
             </div>
           </motion.div>
 
@@ -154,6 +161,10 @@ const Contact = ({ handleMouseEnter, handleMouseLeave }) => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-7 glass-card rounded-[3rem] p-10 md:p-16 shadow-premium-hover overflow-hidden relative border border-obsidian-700/10"
           >
+            <div className="relative z-10 mb-8 text-center md:text-left">
+              <span className="text-[10px] font-black tracking-[0.2em] text-accent-orange uppercase">Prefer to write?</span>
+              <h3 className="text-2xl font-bold text-text-primary tracking-tight mt-1">Send a message instead</h3>
+            </div>
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
               <div className="flex flex-col gap-3">
                 <label className="text-[10px] font-black tracking-[0.2em] text-accent-orange uppercase ml-1">Full Name</label>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedin, FaFacebookF, FaReact, FaNodeJs, FaEnvelope, FaLock, FaShieldAlt, FaMapMarkerAlt, FaUserCheck } from 'react-icons/fa';
 import { SiTailwindcss, SiFramer, SiVite, SiStripe } from 'react-icons/si';
 import { getLocationPath, locationPages } from '../data/locationPages';
+import { openCalendly } from '../utils/calendly';
 
 const Footer = ({ handleMouseEnter, handleMouseLeave }) => {
   const socialLinks = [
@@ -65,13 +66,24 @@ const Footer = ({ handleMouseEnter, handleMouseLeave }) => {
                 </a>
               </div>
             </div>
-            <Link
-              to="/custom-ai/"
-              className="mt-5 inline-flex items-center gap-2 rounded-full border border-accent-orange/40 bg-accent-orange/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-accent-orange transition-colors hover:bg-accent-orange hover:text-white"
-            >
-              ✨ Custom AI Solutions
-              <span className="text-[9px] font-black uppercase tracking-widest border border-current/40 px-1.5 py-0.5 rounded-full leading-none">New</span>
-            </Link>
+            <div className="mt-5 flex flex-col gap-3 items-center md:items-start">
+              <button
+                type="button"
+                onClick={openCalendly}
+                className="inline-flex items-center gap-2 rounded-full bg-sunset-gradient px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-white transition-transform hover:scale-105 active:scale-95"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                📅 Book a Free Call
+              </button>
+              <Link
+                to="/custom-ai/"
+                className="inline-flex items-center gap-2 rounded-full border border-accent-orange/40 bg-accent-orange/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-accent-orange transition-colors hover:bg-accent-orange hover:text-white"
+              >
+                ✨ Custom AI Solutions
+                <span className="text-[9px] font-black uppercase tracking-widest border border-current/40 px-1.5 py-0.5 rounded-full leading-none">New</span>
+              </Link>
+            </div>
           </div>
         </div>
 

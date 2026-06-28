@@ -1,4 +1,4 @@
-export const CALENDLY_URL = 'https://calendly.com/zachary-zachhowell/30min';
+export const CALENDLY_URL = 'https://calendly.com/zachary-zachhowell/new-meeting';
 
 // Lazily inject Calendly's popup widget assets (once) so the booking
 // overlay can open on the page without the visitor ever leaving.
