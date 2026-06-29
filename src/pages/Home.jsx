@@ -181,15 +181,17 @@ function PostPilotBlurb() {
               </p>
             </div>
             <div className="flex-shrink-0">
-              <Link
-                to="/postpilot/"
+              <a
+                href="https://postpilot.zachhowell.dev"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-sunset-gradient px-8 py-4 text-sm font-black uppercase tracking-[0.18em] text-white shadow-lg transition-all hover:shadow-accent-red/30 hover:scale-105 active:scale-95"
               >
                 Meet PostPilot
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </Link>
+              </a>
             </div>
           </div>
         </motion.div>

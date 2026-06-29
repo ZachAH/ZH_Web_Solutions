@@ -46,12 +46,6 @@ const ROUTES = [
       'Custom AI products built for your business: AI assistants, workflow automation, document intelligence, and AI-powered web apps. I find the highest-ROI use cases and ship working solutions fast. Book a free AI strategy call.',
   },
   {
-    path: canonicalPath('/postpilot'),
-    title: 'PostPilot | AI Facebook Posting on Autopilot for Small Business — Zach Howell',
-    description:
-      'PostPilot keeps your Facebook Page active without the time sink. An AI agent drafts posts in your voice, sends them to your phone for one-tap approval, and publishes the ones you okay — branded graphics included. You approve everything; nothing posts without you. Book a setup call.',
-  },
-  {
     path: canonicalPath('/about'),
     title: 'Why ZH Web Solutions? | Senior Engineer, Fast React Builds, Zero Lock-In',
     description:

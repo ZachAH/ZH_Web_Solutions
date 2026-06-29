@@ -166,8 +166,8 @@ const builtApps = [
     tags: ['Claude Agent', 'Automation', 'PWA'],
     status: 'Live product',
     cta: 'Explore PostPilot',
-    to: '/postpilot/',
-    external: false,
+    to: 'https://postpilot.zachhowell.dev',
+    external: true,
   },
   {
     name: 'CodebaseQA',

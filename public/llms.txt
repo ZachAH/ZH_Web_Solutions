@@ -21,9 +21,6 @@ This website belongs to Zach Howell, a Wisconsin-based senior full-stack enginee
 - [custom-ai](https://zachhowell.dev/custom-ai/)
   Summary: Custom AI development services: AI assistants and agents, workflow automation, document and data intelligence, AI-powered web apps, and AI strategy. Zach embeds with clients to find high-ROI use cases and ship working AI solutions fast.
 
-- [postpilot](https://zachhowell.dev/postpilot/)
-  Summary: PostPilot is an AI Facebook posting agent for small businesses: it drafts posts in the owner's voice, sends each to their phone for one-tap approval, and publishes only approved posts with branded graphics. Owner approves everything; nothing posts without them. A live AI product built and managed by Zach Howell.
-
 - [about](https://zachhowell.dev/about/)
   Summary: Authority page explaining why businesses choose ZH Web Solutions over WordPress, Wix, and GoDaddy: senior-engineer execution, faster performance, stronger SEO, better security, and full ownership.
 

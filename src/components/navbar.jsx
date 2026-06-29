@@ -52,7 +52,7 @@ const Navbar = ({ handleMouseEnter, handleMouseLeave }) => {
     { name: 'Why Me?', path: '/about/' },
     { name: 'Services', path: '/services/' },
     { name: 'Custom AI', path: '/custom-ai/' },
-    { name: 'PostPilot', path: '/postpilot/', badge: 'New' },
+    { name: 'PostPilot', href: 'https://postpilot.zachhowell.dev', external: true, badge: 'New' },
     { name: 'Areas Served', path: '/locations/' },
     { name: 'Packages', path: '/pricing/' },
     { name: 'Free Audit', path: '/audit/' },

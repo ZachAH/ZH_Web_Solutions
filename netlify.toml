@@ -5,3 +5,16 @@
 # Matches Netlify default — explicit so canonical/sitemap trailing slashes stay in sync.
 [build.processing.html]
   pretty_urls = true
+
+# PostPilot moved to its own subdomain — redirect the old internal path permanently.
+[[redirects]]
+  from = "/postpilot"
+  to = "https://postpilot.zachhowell.dev"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/postpilot/*"
+  to = "https://postpilot.zachhowell.dev/:splat"
+  status = 301
+  force = true
