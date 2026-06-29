@@ -8,8 +8,7 @@ import { ensureCalendly, openCalendly } from '../utils/calendly';
 const PHONE_NUMBER = '262-341-7181';
 const PHONE_HREF = 'tel:2623417181';
 
-// TODO(zach): confirm the exact CodebaseQA public repo URL — defaults to GitHub profile.
-const CODEBASEQA_REPO_URL = 'https://github.com/ZachAH';
+const CODEBASEQA_REPO_URL = 'https://github.com/ZachAH/CodebaseQA';
 
 const customAiJsonLd = {
   '@context': 'https://schema.org',

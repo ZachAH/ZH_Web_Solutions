@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--", "--port", "5175"],
       "port": 5175
+    },
+    {
+      "name": "postpilot",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "postpilot", "run", "dev", "--", "--port", "5180"],
+      "port": 5180
     }
   ]
 }

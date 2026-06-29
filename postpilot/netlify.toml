@@ -1,0 +1,13 @@
+# Netlify config for the standalone PostPilot site (postpilot.zachhowell.dev).
+# When connecting this repo as a SECOND Netlify site, set the site's
+# "Base directory" to `postpilot` in the Netlify UI. These settings are
+# then relative to that base directory.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Single-page app: send all routes to index.html.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
