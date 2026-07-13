@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import Seo from '../components/Seo';
 import DiscoveryForm from '../components/DiscoveryForm';
-import { breadcrumb } from '../utils/structuredData';
+import { breadcrumb, faqPage } from '../utils/structuredData';
 import { getLocationPath, locationPageMap, locationPages } from '../data/locationPages';
 import { absoluteUrl, canonicalPath } from '../utils/seoUrls';
 
@@ -46,6 +46,9 @@ const LocationPage = () => {
 
   const path = getLocationPath(location.slug);
   const title = `Custom Web Development in ${location.city}, WI | ZH Web Solutions`;
+  const nearbyAreas = (location.nearbyAreas || [])
+    .map((slug) => locationPageMap[slug])
+    .filter(Boolean);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -80,6 +83,7 @@ const LocationPage = () => {
         },
         description: location.metaDescription,
       },
+      ...(location.faqs && location.faqs.length ? [faqPage(location.faqs)] : []),
     ],
   };
 
@@ -160,6 +164,104 @@ const LocationPage = () => {
             {' '}
             {location.serviceDescription}
           </p>
+        </div>
+
+        {location.subServices && location.subServices.length > 0 && (
+          <div className="mt-10">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-obsidian-950 dark:text-white mb-6">
+              How I work in {location.city}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {location.subServices.map((service) => (
+                <div
+                  key={service.title}
+                  className="rounded-[2rem] border border-zinc-200 dark:border-white/10 bg-zinc-50/80 dark:bg-white/5 p-6 md:p-8"
+                >
+                  <h3 className="text-lg font-bold text-obsidian-950 dark:text-white mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                    {service.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {location.faqs && location.faqs.length > 0 && (
+          <div className="mt-10">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-obsidian-950 dark:text-white mb-6">
+              {location.city} web design — common questions
+            </h2>
+            <div className="space-y-4">
+              {location.faqs.map((item) => (
+                <div
+                  key={item.q}
+                  className="rounded-[1.75rem] border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 md:p-8"
+                >
+                  <p className="font-bold text-obsidian-950 dark:text-white mb-2">{item.q}</p>
+                  <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="mt-10 rounded-[2.5rem] border border-accent-orange/30 bg-accent-orange/5 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm md:text-base text-zinc-700 dark:text-zinc-200 font-medium">
+            Not ready for a full rebuild? Get a free audit of your current {location.city} site first — no obligation.
+          </p>
+          <Link
+            to="/audit"
+            className="shrink-0 inline-flex items-center gap-2 rounded-full bg-accent-orange px-6 py-3 text-xs font-black uppercase tracking-[0.18em] text-white hover:scale-105 active:scale-95 transition-transform"
+          >
+            Get My Free Audit
+          </Link>
+        </div>
+
+        <div className="mt-10 rounded-[2.5rem] border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 md:p-8">
+          <p className="text-[10px] font-black uppercase tracking-[0.24em] text-accent-orange mb-4">
+            Also Building AI
+          </p>
+          <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
+            Beyond web development, I build AI assistants and workflow automation for {location.city}-area businesses too — see{' '}
+            <Link to="/custom-ai" className="font-bold text-accent-orange hover:underline">
+              Custom AI Development
+            </Link>{' '}
+            if manual busywork is slowing your team down.
+          </p>
+        </div>
+
+        {nearbyAreas.length > 0 && (
+          <div className="mt-10">
+            <h2 className="text-xl font-bold tracking-tight text-obsidian-950 dark:text-white mb-4">
+              Also serving nearby
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              {nearbyAreas.map((page) => (
+                <Link
+                  key={page.slug}
+                  to={getLocationPath(page.slug)}
+                  className="rounded-full border border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-white/5 px-5 py-2.5 text-sm font-bold text-obsidian-950 dark:text-white hover:border-accent-orange/40 hover:text-accent-orange transition-colors"
+                >
+                  {page.city}, WI
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="mt-10 rounded-[2.5rem] overflow-hidden border border-zinc-200 dark:border-white/10 shadow-sm">
+          <iframe
+            title={`Map of ${location.city}, WI service area`}
+            src={`https://www.google.com/maps?q=${encodeURIComponent(`${location.city}, WI`)}&output=embed`}
+            width="100%"
+            height="320"
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
 
         <div className="mt-10">

@@ -72,6 +72,39 @@ This website belongs to Zach Howell, a Wisconsin-based senior full-stack enginee
 - [locations/menomonee-falls-web-design](https://zachhowell.dev/locations/menomonee-falls-web-design/)
   Summary: Menomonee Falls location page focused on Community Reach, with city-specific positioning for custom web development and local SEO.
 
+- [blog](https://zachhowell.dev/blog/)
+  Summary: Blog hub covering web development, local SEO, and AI automation guidance for Southeastern Wisconsin small businesses.
+
+- [blog/website-cost-brookfield-2026](https://zachhowell.dev/blog/website-cost-brookfield-2026/)
+  Summary: A real breakdown of what custom website projects cost for Brookfield, WI businesses in 2026 — and why 'starting at' pricing from page-builder agencies rarely holds.
+
+- [blog/signs-brookfield-business-needs-new-website](https://zachhowell.dev/blog/signs-brookfield-business-needs-new-website/)
+  Summary: How to tell whether your Brookfield business website needs a fresh coat of paint or a full rebuild — five concrete signs to check today.
+
+- [blog/wordpress-vs-custom-react-milwaukee](https://zachhowell.dev/blog/wordpress-vs-custom-react-milwaukee/)
+  Summary: A straight comparison of WordPress and custom React development for Milwaukee small businesses planning a website rebuild — costs, tradeoffs, and who each one actually fits.
+
+- [blog/google-maps-local-seo-cedarburg](https://zachhowell.dev/blog/google-maps-local-seo-cedarburg/)
+  Summary: A practical checklist for ranking higher on Google Maps for Cedarburg, WI local searches — Google Business Profile, on-site signals, and reviews.
+
+- [blog/what-a-real-website-audit-checks-milwaukee](https://zachhowell.dev/blog/what-a-real-website-audit-checks-milwaukee/)
+  Summary: What an actual comprehensive website audit covers — performance, SEO, accessibility, security, and conversion — versus the surface-level checklist most agencies hand out.
+
+- [blog/squarespace-vs-custom-development-cedarburg](https://zachhowell.dev/blog/squarespace-vs-custom-development-cedarburg/)
+  Summary: How to tell when a Cedarburg business has outgrown Squarespace and what to actually gain (and give up) by moving to custom development.
+
+- [blog/ai-automation-waukesha-county](https://zachhowell.dev/blog/ai-automation-waukesha-county/)
+  Summary: Four concrete AI automation examples for Waukesha County small businesses — quote follow-ups, intake routing, document processing, and appointment reminders.
+
+- [blog/cost-of-slow-website-brookfield](https://zachhowell.dev/blog/cost-of-slow-website-brookfield/)
+  Summary: How page speed directly costs Brookfield retail and service businesses customers and Google ranking — with the numbers behind it.
+
+- [blog/ai-for-law-firms-medical-milwaukee](https://zachhowell.dev/blog/ai-for-law-firms-medical-milwaukee/)
+  Summary: Practical, compliant AI automation use cases for Milwaukee-area law firms and medical practices — intake, document review, and scheduling — without an in-house AI team.
+
+- [blog/choosing-a-web-developer-brookfield-questions](https://zachhowell.dev/blog/choosing-a-web-developer-brookfield-questions/)
+  Summary: The questions Brookfield business owners should ask before hiring a web developer — ownership, timeline, and what happens after launch.
+
 ## Focus Areas
 
 - Custom AI development: assistants, agents, automation, document/data intelligence, and AI-powered web apps

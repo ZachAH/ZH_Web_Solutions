@@ -25,19 +25,56 @@ export const locationPages = [
     city: 'Brookfield',
     focusKeyword: 'Local Business Growth',
     metaDescription:
-      'Looking for a web developer in Brookfield? ZH Web Solutions provides high-performance, GSAP-powered websites to help Brookfield businesses dominate their local market.',
+      'Custom web development for Brookfield, WI businesses along Bluemound Road, The Corners, and Corporate Woods. Fast React sites, local SEO, and Google Maps visibility built by a senior engineer — not a template.',
     heroLead:
-      'Brookfield businesses win when their websites feel as polished as the in-person experience. The standard is higher here, which means your site has to build trust immediately and move qualified visitors toward action.',
+      "Brookfield's business corridors — Bluemound Road, The Corners of Brookfield, Corporate Woods — are full of companies that already look established in person. The website often doesn't match. If yours was built five years ago on a page builder, it's quietly undercutting the credibility your storefront or office already earns.",
     serviceDescription:
       'For Brookfield clients, I center the build around Local Business Growth: fast-loading pages, clear service positioning, and conversion-focused layouts that turn local search traffic into calls, quote requests, and booked consultations.',
     marketInsight:
-      'That usually means tighter messaging, stronger service-page structure, higher-end motion treatment, and a clearer separation between what you do, why you are credible, and how quickly a prospect can take the next step.',
+      "Brookfield sits in one of the most competitive commercial markets in Waukesha County — retail along Bluemound Road, professional offices around Corporate Woods, and a shopping base that expects The Corners level of polish everywhere else it looks. A website that loads slowly or reads as generic gets compared, consciously or not, against that standard, and loses.",
     proofPoints: [
-      'Premium service-page architecture for local rankings',
-      'Sharper CTA flow for calls, consultations, and estimate forms',
-      'Brand presentation calibrated for affluent suburban buyers',
-      'Technical SEO and schema support for map-pack relevance',
+      'Local SEO and schema built for map-pack visibility in the Bluemound Road / Brookfield Square retail corridor',
+      'Conversion paths tuned for higher-consideration purchases common among Corporate Woods professional-services clients',
+      'Page speed and Core Web Vitals scores that hold up against The Corners-caliber brand expectations',
+      'Direct access to the engineer who built the site — no account manager relaying requests to a dev team',
     ],
+    subServices: [
+      {
+        title: 'Service-page architecture for Brookfield retail & professional services',
+        body: "Most Brookfield competitors run one generic \"Services\" page. I build a dedicated page per offering — each targeting its own local search terms, each with its own clear call to action — so a prospect searching for a specific service in Brookfield lands on a page written for exactly that, not a paragraph buried in a longer page.",
+      },
+      {
+        title: 'GSAP motion for premium positioning',
+        body: "Brookfield buyers are used to polish — The Corners set that bar retail-wide. I use GSAP-powered motion deliberately: scroll reveals, hover states, and transitions that read as premium rather than gimmicky, reinforcing that your business belongs in the same tier as the market around it.",
+      },
+      {
+        title: 'Local SEO & schema for map-pack relevance',
+        body: 'LocalBusiness and Service schema, geo-tagged metadata, and NAP consistency built in from day one — the technical foundation Google uses to decide whether your business shows up in the Brookfield map pack versus buried on page two.',
+      },
+      {
+        title: 'Migrations off WordPress, Wix, or Squarespace',
+        body: "If you're already established in Brookfield but stuck on a slow, plugin-heavy platform, I handle the full migration — content, SEO history, redirects — onto a custom React build without losing the rankings you've already earned.",
+      },
+    ],
+    faqs: [
+      {
+        q: 'How much does a website cost for a Brookfield business?',
+        a: "It depends on scope, but most Brookfield small-business builds fall into a clear range once we talk through your services, page count, and whether you need e-commerce. Book a free audit or discovery call and I'll give you a real number, not a starting-at price that balloons later.",
+      },
+      {
+        q: 'Do you work with retail businesses near The Corners or Bluemound Road?',
+        a: "Yes — retail, professional services, and office-based businesses across the Bluemound Road corridor and Corporate Woods are a core part of who I build for in Brookfield.",
+      },
+      {
+        q: 'How fast can a Brookfield business website launch?',
+        a: "Most custom builds launch in 2–4 weeks depending on content readiness and revisions. I'll give you a firm timeline before any work starts.",
+      },
+      {
+        q: 'Do you handle hosting, domain, and DNS for Brookfield clients?',
+        a: 'Yes — domain registration, hosting, SSL, and DNS are handled end-to-end, and full ownership of every account transfers to you on launch day.',
+      },
+    ],
+    nearbyAreas: ['elm-grove', 'wauwatosa', 'waukesha'],
   },
   {
     slug: 'mequon',

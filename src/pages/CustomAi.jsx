@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
-import { customAiSchema, breadcrumb } from '../utils/structuredData';
+import { seoContent } from '../data/seoContent';
+import { customAiSchema, customAiLocalSchema, customAiFaqSchema, customAiLocalFaqs, breadcrumb } from '../utils/structuredData';
 import { ensureCalendly, openCalendly } from '../utils/calendly';
 
 const PHONE_NUMBER = '262-341-7181';
@@ -14,6 +15,8 @@ const customAiJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     customAiSchema,
+    customAiLocalSchema,
+    customAiFaqSchema,
     breadcrumb([
       { name: 'Home', path: '/' },
       { name: 'Custom AI', path: '/custom-ai' },
@@ -191,10 +194,10 @@ const CustomAi = ({ handleMouseEnter, handleMouseLeave }) => {
   return (
     <section className="min-h-screen py-32 px-6 md:px-12 lg:px-24 bg-white dark:bg-transparent">
       <Seo
-        title="Custom AI Development for Business | AI Automation, Agents & Apps — Zach Howell"
-        description="Custom AI products built for your business: AI assistants, workflow automation, document intelligence, and AI-powered web apps. I embed with your team to find the highest-ROI use cases and ship working solutions fast. Book a free AI strategy call."
-        path="/custom-ai"
-        keywords="custom AI development, AI automation for business, build AI agents, custom AI products, AI workflow automation, LLM application development, AI chatbot development, AI consultant Wisconsin, forward deployed engineer, RAG development, AI integration services, business process automation AI, AI engineer, AI model training, RLHF, frontier model evaluation, paid AI trainer"
+        title={seoContent.customAi.title}
+        description={seoContent.customAi.description}
+        path={seoContent.customAi.path}
+        keywords={seoContent.customAi.keywords}
         jsonLd={customAiJsonLd}
       />
 
@@ -536,6 +539,38 @@ const CustomAi = ({ handleMouseEnter, handleMouseLeave }) => {
             ))}
           </motion.div>
         </div>
+
+        {/* ── LOCAL: WISCONSIN & MILWAUKEE-AREA AI ───── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-32 p-10 md:p-14 rounded-[3rem] border border-zinc-200 dark:border-obsidian-800 bg-zinc-50/60 dark:bg-white/[0.02]"
+        >
+          <div className="max-w-3xl mx-auto">
+            <span className="text-sm font-black tracking-[0.3em] text-accent-orange uppercase mb-4 inline-block">
+              Also Local
+            </span>
+            <h2 className="text-2xl md:text-4xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase leading-[0.95] mb-6">
+              AI automation for Wisconsin &amp; Milwaukee-area businesses.
+            </h2>
+            <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed mb-6">
+              While most of this work ships nationwide, I also build AI directly for small businesses across Southeastern Wisconsin — Milwaukee, Brookfield, Waukesha, and the surrounding communities. One recent example: a Waukesha County service business was manually re-typing every inbound quote request into three different tools before anyone followed up. A single automated workflow now reads the request, drafts the quote, and routes a follow-up reminder to the right person — no new hires, no new software subscriptions.
+            </p>
+            <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed">
+              If you already have a website with me, adding AI automation on top of it is often the fastest, highest-ROI next step — the intake, forms, and data are already there.
+            </p>
+
+            <div className="mt-10 space-y-4">
+              {customAiLocalFaqs.map((item) => (
+                <div key={item.q} className="rounded-2xl bg-white dark:bg-obsidian-900/40 border border-zinc-200 dark:border-obsidian-800 p-6">
+                  <p className="font-bold text-zinc-900 dark:text-white mb-1.5">{item.q}</p>
+                  <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
 
         {/* ── FINAL CTA ──────────────────────────────── */}
         <motion.div

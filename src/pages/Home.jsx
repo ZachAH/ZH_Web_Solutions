@@ -7,6 +7,8 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import BeforeAfter from '../components/BeforeAfter';
 import Seo from '../components/Seo';
+import { seoContent } from '../data/seoContent';
+import { getLocationPath } from '../data/locationPages';
 import {
   personSchema,
   websiteSchema,
@@ -109,6 +111,48 @@ const SummerPromoModal = ({ isOpen, onClose }) => (
     )}
   </AnimatePresence>
 );
+
+function LocalAreasBlurb() {
+  return (
+    <section className="py-20 px-6 md:px-12 lg:px-24">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="rounded-[2rem] border border-zinc-200 dark:border-white/10 bg-zinc-50/80 dark:bg-white/5 p-10 md:p-14"
+        >
+          <p className="text-[10px] font-black uppercase tracking-[0.24em] text-accent-orange mb-4">
+            Serving Southeastern Wisconsin
+          </p>
+          <h2 className="text-2xl md:text-3xl font-black tracking-tight text-obsidian-950 dark:text-white mb-4">
+            Built for businesses across the region.
+          </h2>
+          <p className="text-text-secondary dark:text-zinc-300 leading-relaxed max-w-2xl mb-6">
+            Custom React builds and local SEO tuned to the market you actually compete in — not a generic template. See the market-specific approach for{' '}
+            <Link to={getLocationPath('brookfield')} className="font-bold text-accent-orange hover:underline">
+              Brookfield
+            </Link>
+            ,{' '}
+            <Link to={getLocationPath('milwaukee')} className="font-bold text-accent-orange hover:underline">
+              Milwaukee
+            </Link>
+            , and{' '}
+            <Link to={getLocationPath('waukesha')} className="font-bold text-accent-orange hover:underline">
+              Waukesha
+            </Link>
+            , or browse every{' '}
+            <Link to="/locations" className="font-bold text-accent-orange hover:underline">
+              service area
+            </Link>
+            .
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 function AiBlurb() {
   return (
@@ -261,10 +305,10 @@ function Home({ handleMouseEnter, handleMouseLeave }) {
   return (
     <>
       <Seo
-        title="Wisconsin Web Developer | Custom React Websites for Small Business — Zach Howell"
-        description="Wisconsin freelance web developer building fast, SEO-optimized React websites, e-commerce stores, and custom web apps for small businesses. Serving Milwaukee, Waukesha, Madison, and all of WI. Get a free website audit today."
-        path="/"
-        keywords="Wisconsin web developer, Milwaukee web designer, small business website Wisconsin, React developer Milwaukee, custom website development Waukesha, web design West Bend WI, freelance developer Wisconsin, e-commerce developer Milwaukee, SEO optimization Wisconsin, affordable small business web design, website developer near me WI"
+        title={seoContent.home.title}
+        description={seoContent.home.description}
+        path={seoContent.home.path}
+        keywords={seoContent.home.keywords}
         jsonLd={homeJsonLd}
       />
       <SummerPromoModal isOpen={showSummerPromo} onClose={() => setShowSummerPromo(false)} />
@@ -281,6 +325,7 @@ function Home({ handleMouseEnter, handleMouseLeave }) {
         handleMouseEnter={handleMouseEnter}
         handleMouseLeave={handleMouseLeave}
       />
+      <LocalAreasBlurb />
       <AiBlurb />
       <PostPilotBlurb />
       <WeddingBlurb />

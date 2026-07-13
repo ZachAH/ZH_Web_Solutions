@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
+import { seoContent } from '../data/seoContent';
+import { getLocationPath } from '../data/locationPages';
 import { servicesSchema, breadcrumb } from '../utils/structuredData';
 
 const servicesJsonLd = {
@@ -123,10 +125,10 @@ const Services = ({ handleMouseEnter, handleMouseLeave }) => {
   return (
     <section className="min-h-screen py-32 px-6 md:px-12 lg:px-24 bg-white dark:bg-transparent">
       <Seo
-        title="Wisconsin Web Development Services | React, SEO, Hosting & E-commerce — Zach Howell"
-        description="Full-cycle web development services for Wisconsin small businesses: custom React websites, e-commerce with Stripe, SEO & Core Web Vitals optimization, hosting, DNS management, and WCAG accessibility. Serving Milwaukee, Madison, Waukesha, and beyond."
-        path="/services"
-        keywords="web development services Wisconsin, React developer Milwaukee, custom website development Waukesha, SEO services Wisconsin, e-commerce development Milwaukee, small business web design Madison WI, web hosting Wisconsin, DNS management Milwaukee, WCAG accessibility Wisconsin, Core Web Vitals optimization"
+        title={seoContent.services.title}
+        description={seoContent.services.description}
+        path={seoContent.services.path}
+        keywords={seoContent.services.keywords}
         jsonLd={servicesJsonLd}
       />
       <div className="max-w-7xl mx-auto">
@@ -145,6 +147,13 @@ const Services = ({ handleMouseEnter, handleMouseLeave }) => {
           </h1>
           <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-300 max-w-3xl mx-auto font-medium leading-relaxed">
             I don’t just write code. I manage the entire lifecycle—from domain registration and UI design to SEO optimization and global deployment.
+          </p>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-4">
+            See how this looks in practice for{' '}
+            <Link to={getLocationPath('brookfield')} className="font-bold text-accent-orange hover:underline">
+              Brookfield businesses
+            </Link>
+            .
           </p>
         </motion.div>
 

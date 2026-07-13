@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Seo from '../components/Seo';
 import ConversionDashboard from '../components/ConversionDashboard';
+import { seoContent } from '../data/seoContent';
 import { personSchema, breadcrumb } from '../utils/structuredData';
 
 const aboutJsonLd = {
@@ -96,10 +97,10 @@ const About = () => {
   return (
     <section id="about" className="py-32 px-6 md:px-12 lg:px-24 bg-white dark:bg-obsidian-950">
       <Seo
-        title="Why ZH Web Solutions? | More Customers, More Revenue, Zero Hassle"
-        description="Why businesses choose ZH Web Solutions: more Google Maps visibility, more phone calls and leads, higher ROI, and a website that brings in customers while you focus on running your business."
-        path="/about"
-        keywords="more google maps visibility, get more phone calls from website, website leads to email, higher ROI website, local SEO for restaurants, website for service businesses, Milwaukee web developer"
+        title={seoContent.about.title}
+        description={seoContent.about.description}
+        path={seoContent.about.path}
+        keywords={seoContent.about.keywords}
         jsonLd={aboutJsonLd}
       />
 
@@ -242,12 +243,20 @@ const About = () => {
           <p className="text-zinc-300 max-w-3xl mx-auto text-lg leading-relaxed mb-8">
             If you are ready for a website that actually brings in business — more calls, more bookings, more revenue — start the discovery process today.
           </p>
-          <Link
-            to="/custom-discovery"
-            className="inline-flex items-center justify-center rounded-full bg-accent-orange px-8 py-4 text-sm font-black uppercase tracking-[0.18em] text-white hover:bg-accent-orange/90 transition-colors"
-          >
-            Start Your Discovery Form
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              to="/custom-discovery"
+              className="inline-flex items-center justify-center rounded-full bg-accent-orange px-8 py-4 text-sm font-black uppercase tracking-[0.18em] text-white hover:bg-accent-orange/90 transition-colors"
+            >
+              Start Your Discovery Form
+            </Link>
+            <Link
+              to="/audit"
+              className="inline-flex items-center justify-center rounded-full border border-white/20 px-8 py-4 text-sm font-black uppercase tracking-[0.18em] text-white hover:bg-white/10 transition-colors"
+            >
+              Not Ready? Get a Free Audit
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { getLocationPath, locationPages, SERVICE_AREA_NAMES } from '../src/data/locationPages.js';
+import { blogPosts } from '../src/data/blogPosts.js';
 import { absoluteUrl, canonicalPath, SITE_URL } from '../src/utils/seoUrls.js';
 const today = new Date().toISOString().slice(0, 10);
 const publicDir = path.resolve('public');
@@ -75,6 +76,19 @@ const routes = [
     summary:
       `${location.city} location page focused on ${location.focusKeyword}, with city-specific positioning for custom web development and local SEO.`,
   })),
+  {
+    path: canonicalPath('/blog'),
+    changefreq: 'weekly',
+    priority: '0.7',
+    summary: 'Blog hub covering web development, local SEO, and AI automation guidance for Southeastern Wisconsin small businesses.',
+  },
+  ...blogPosts.map((post) => ({
+    path: canonicalPath(`/blog/${post.slug}`),
+    changefreq: 'monthly',
+    priority: '0.6',
+    lastmod: post.publishDate,
+    summary: post.metaDescription,
+  })),
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -83,7 +97,7 @@ ${routes
   .map(
     (route) => `  <url>
     <loc>${absoluteUrl(route.path)}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${route.lastmod || today}</lastmod>
     <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>
   </url>`

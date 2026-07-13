@@ -26,30 +26,40 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { getLocationPath, locationPages } from '../src/data/locationPages.js';
+import { seoContent } from '../src/data/seoContent.js';
+import { blogPosts } from '../src/data/blogPosts.js';
 import { absoluteUrl, canonicalPath, distSegment } from '../src/utils/seoUrls.js';
 const DIST = path.resolve('dist');
 const TEMPLATE_PATH = path.join(DIST, 'index.html');
 
-// Per-route SEO config. Keep titles/descriptions in sync with each
-// page's <Seo> component so the first-paint copy matches hydration.
+// Per-route SEO config. `home`, `services`, `about`, and `custom-ai` are
+// pulled from src/data/seoContent.js — the SAME source each page's <Seo>
+// component reads from — so first-paint copy and hydrated copy can never
+// drift apart again. Routes without a shared-content entry keep their
+// title/description defined here directly.
 const ROUTES = [
   {
+    // canonicalPath('/') -> distSegment('/') -> '' -> writes to dist/index.html
+    // itself, keeping the homepage's first-paint meta locked to the same
+    // seoContent.home values Home.jsx's <Seo> uses after hydration.
+    path: canonicalPath('/'),
+    title: seoContent.home.title,
+    description: seoContent.home.description,
+  },
+  {
     path: canonicalPath('/services'),
-    title: 'Web Development Services | React, E-Commerce & SEO — Zach Howell',
-    description:
-      'Custom React websites, e-commerce builds, SEO optimization, and ongoing support for Wisconsin small businesses. See every service I offer and how I work.',
+    title: seoContent.services.title,
+    description: seoContent.services.description,
   },
   {
     path: canonicalPath('/custom-ai'),
-    title: 'Custom AI Development for Business | AI Automation, Agents & Apps — Zach Howell',
-    description:
-      'Custom AI products built for your business: AI assistants, workflow automation, document intelligence, and AI-powered web apps. I find the highest-ROI use cases and ship working solutions fast. Book a free AI strategy call.',
+    title: seoContent.customAi.title,
+    description: seoContent.customAi.description,
   },
   {
     path: canonicalPath('/about'),
-    title: 'Why ZH Web Solutions? | Senior Engineer, Fast React Builds, Zero Lock-In',
-    description:
-      'Why businesses pay more for ZH Web Solutions: direct access to a senior full-stack engineer, high-performance React/Vite builds, better SEO, stronger security, and full ownership without WordPress or builder lock-in.',
+    title: seoContent.about.title,
+    description: seoContent.about.description,
   },
   {
     path: canonicalPath('/pricing'),
@@ -80,6 +90,17 @@ const ROUTES = [
     path: getLocationPath(location.slug),
     title: `Custom Web Development in ${location.city}, WI | ZH Web Solutions`,
     description: location.metaDescription,
+  })),
+  {
+    path: canonicalPath('/blog'),
+    title: 'Web Development, Local SEO & AI Blog | ZH Web Solutions',
+    description:
+      'Practical web development, local SEO, and AI automation guidance for Brookfield, Milwaukee, Waukesha, and Southeastern Wisconsin small businesses.',
+  },
+  ...blogPosts.map((post) => ({
+    path: canonicalPath(`/blog/${post.slug}`),
+    title: `${post.title} | ZH Web Solutions Blog`,
+    description: post.metaDescription,
   })),
 ];
 

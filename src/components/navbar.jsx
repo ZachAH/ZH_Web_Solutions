@@ -54,6 +54,7 @@ const Navbar = ({ handleMouseEnter, handleMouseLeave }) => {
     { name: 'Custom AI', path: '/custom-ai/' },
     { name: 'PostPilot', href: 'https://postpilot.zachhowell.dev', external: true, badge: 'New' },
     { name: 'Areas Served', path: '/locations/' },
+    { name: 'Blog', path: '/blog/' },
     { name: 'Packages', path: '/pricing/' },
     { name: 'Free Audit', path: '/audit/' },
     { name: 'Weddings', path: null, href: 'https://weddings.zachhowell.dev', external: true },

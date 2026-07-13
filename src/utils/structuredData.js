@@ -229,6 +229,51 @@ export const customAiSchema = {
   },
 };
 
+export const customAiLocalSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'AI Automation for Small Business',
+  name: 'AI Automation for Wisconsin & Milwaukee-Area Businesses',
+  url: absoluteUrl('/custom-ai'),
+  description:
+    'AI assistants, workflow automation, and document intelligence built for small businesses across Southeastern Wisconsin, including Milwaukee, Brookfield, and Waukesha County.',
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'ZH Web Solutions',
+    url: SITE_URL,
+    address: ADDRESS,
+    geo: GEO,
+  },
+  areaServed: WISCONSIN_SERVICE_AREAS,
+};
+
+export const faqPage = (items) => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+});
+
+export const customAiLocalFaqs = [
+  {
+    q: 'Do you build AI automation for small businesses in Milwaukee and Brookfield?',
+    a: 'Yes. Alongside national AI work, I build AI assistants, workflow automation, and document intelligence for small and mid-size businesses across Southeastern Wisconsin — Milwaukee, Brookfield, Waukesha, and the surrounding area.',
+  },
+  {
+    q: 'What does an AI automation project cost for a Wisconsin business?',
+    a: "It depends on scope — a single automated workflow (lead intake, appointment follow-up, document processing) is a much smaller project than a full AI-powered app. Book a free strategy call and I'll scope it honestly before you commit to anything.",
+  },
+  {
+    q: 'Do I need my own AI or data team to work with you?',
+    a: 'No. I handle the model selection, integration, and deployment end-to-end. Most Wisconsin small-business clients have no in-house AI expertise — that is the point of hiring a specialist for it.',
+  },
+];
+
+export const customAiFaqSchema = faqPage(customAiLocalFaqs);
+
 export const postPilotSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
